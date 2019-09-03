@@ -4,6 +4,11 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+.list {
+  text-align: center;
+  margin: auto;
+}
+
 nav {
   height: 4em;
   width: 100%
