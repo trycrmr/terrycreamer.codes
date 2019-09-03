@@ -4,6 +4,28 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+nav {
+  height: 4em;
+  width: 100%
+}
+
+nav > ul {
+  list-style: none;
+  position: relative;
+}
+
+nav > ul > li {
+  float: left;
+  padding: 1em;
+}
+
+nav > ul > li > a {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .title {
  font-size: 2rem;
  font-weight: 700;
@@ -65,4 +87,17 @@ img {
         float: none; 
         width: 100%;
     }
+  nav {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background-color: white
+  }
+  nav > ul > li {
+    float: right;
+  }
+  .wholePage {
+    padding-bottom: 12em;
+  }
 }
