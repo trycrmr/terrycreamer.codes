@@ -4,6 +4,36 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+.navSpace { /* On mobile, haivng consistent space between the bottom nav and the bottom content was proving tricky. This creates a second nav that's behind the first nav on mobile to handle the spacing. Not a great solution; Should use CSS for spacing. At the moment it gets the job done. */
+  z-index: 0;
+  position: unset;
+  opacity: 0;
+}
+
+article > section > p {
+  font-size: 1.2rem;
+  color: #28282c;
+  text-align: left;
+  text-indent: 10%;
+}
+
+.meta > p,i {
+  color: dimgray;
+  font-style: italics;
+  font-size: 0.8em;
+}
+
+
+.meta {
+  padding: 0% 10% 0% 10%
+}
+
+.post {
+  text-align: center;
+  margin: auto;
+  padding: 0% 10% 0% 10%;
+}
+
 .list {
   text-align: center;
   margin: auto;
@@ -88,9 +118,9 @@ img {
 @media all and (max-width:800px) {
   .left, .right
     {
-        display: block; 
-        float: none; 
-        width: 100%;
+      display: block; 
+      float: none; 
+      width: 100%;
     }
   nav {
     position: fixed;
@@ -101,8 +131,5 @@ img {
   }
   nav > ul > li {
     float: right;
-  }
-  .wholePage {
-    padding-bottom: 12em;
   }
 }
