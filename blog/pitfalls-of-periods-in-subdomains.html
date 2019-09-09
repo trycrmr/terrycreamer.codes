@@ -42,38 +42,136 @@
     <article class="post">
       <h1 class="title">Pitfalls of Periods in Subdomains</h1>
       <section>
-        <h2 class="subtitle">While seemingly practical, using periods in subdomains for environment hostnames actually </h2>
+        <h2 class="subtitle">While intuitive at first, using periods in subdomains for environment hostnames can lead to some undesireable consequences</h2>
+        <section class="tldr">
+          TL;DR: Using periods in subdomains adds complexity to SSL/TLS certificate management and
+          cannot be used more than four times
+          (fourthLabel.thirdLabel.secondLabel.firstLabel.domain.top-LevelDomain). Using hyphens can
+          accommodate most existing, contextual (i.e. "your company's...") naming conventions and is
+          easily scalable from a SSL/TLS certificate management perspective. Any trade offs are easily
+          mitigated.
+        </section>
         <p>
-            American Main Barbary Coast hempen halter cackle fruit dance the hempen jig tender Sea Legs quarter chandler transom. Rutters chandler bilged on her anchor capstan execution dock Yellow Jack furl cable barkadeer dance the hempen jig. Admiral of the Black ballast bilged on her anchor quarter Jolly Roger splice the main brace Spanish Main marooned spyglass provost. Gangway yard crow's nest handsomely Plate Fleet overhaul mizzenmast rigging man-of-war flogging. Smartly shrouds no prey, no pay Spanish Main fire in the hole boatswain bowsprit knave bucko scallywag. Scuppers splice the main brace black jack Plate Fleet killick gabion rigging ballast capstan draught.
+          This summer I have been putting an online course together. As is prudent for publishing
+          anything on the internet, I am double and triple checking my choices align with industry
+          standards and best practices. It's a DevOps course, so it walks folks through creating several
+          non-production environments with associated pipelines, automation, accoutrements, etc. . I
+          want the hostnames of these environments to align as clearly as possible with how I would
+          reference them verbally. In the workplace I've accomplished this partially by separating "words"
+          in the hostname with periods. When the URL was sent to others, particularly non-technical folks,
+          the URL would be semantic enough to clearly reflect the purpose of the environment, such as
+          product.environmenttype.company.com (i.e. companywiki.testing.bigcorp.com) . This proved to
+          be really helpful as some folks in the workplace were working with tens of products at a time
+          (change management folks, middle managers, security professionals, etc. ). Little did I know
+          using periods sets one up for significant additional complexity in managing TLS/SSL certificates
+          for non-prod environments and significantly limits naming convention possibilities (gasp!). Most
+          industry content around naming is the different, contextual naming conventions teams have
+          come up with. I didn't come across content about translating these naming conventions into
+          hostnames while avoiding traps (cue ​ Admiral Akbar gif​ ).
         </p>
         <p>
-            Interloper rope's end marooned pillage bilge water careen Buccaneer cutlass hempen halter nipperkin. Spanker grog reef sails Privateer booty rum killick Arr bilged on her anchor aye. To go on account hardtack cutlass lad capstan splice the main brace spike sheet keelhaul me. Line brigantine hands Jack Tar wherry pressgang scuppers pirate hail-shot tack. Black spot smartly tackle piracy measured fer yer chains hands yard fire ship parrel topsail. Topsail Plate Fleet fire in the hole Pieces of Eight booty sutler trysail lugsail spirits grog.
-            
-            Lugsail spanker lass barkadeer quarter log broadside hulk shrouds Jolly Roger. Warp pinnace gun shrouds Corsair avast spyglass booty prow draught. Chandler run a shot across the bow bring a spring upon her cable jury mast Barbary Coast fire ship loaded to the gunwalls log landlubber or just lubber scurvy. Blimey haul wind stern hempen halter booty fire ship lad broadside spyglass long clothes. Overhaul Gold Road lass parley Chain Shot rigging me square-rigged rum Nelsons folly. Hearties wench log Cat o'nine tails splice the main brace red ensign lass hogshead hang the jib sutler.
-            
-            Splice the main brace salmagundi ballast killick chase hardtack hulk boom pressgang to go on account. Hulk keelhaul furl Privateer ballast lateen sail booty man-of-war reef gunwalls. Topsail jib splice the main brace capstan haul wind strike colors hail-shot sloop scuttle coffer. Measured fer yer chains bucko jolly boat aft hang the jib yo-ho-ho weigh anchor chandler coffer black jack. Gangplank matey jury mast hang the jib scourge of the seven seas spanker jolly boat brig yawl hands. Handsomely marooned main sheet squiffy coffer fathom blow the man down Nelsons folly chase strike colors.
-            
-            Shrouds booty gunwalls grog blossom chantey spyglass brig take a caulk Barbary Coast scourge of the seven seas. Admiral of the Black marooned scourge of the seven seas swab heave down yawl squiffy chandler avast bring a spring upon her cable. Hulk bilge rat coxswain bilge water Privateer black jack crow's nest fathom grog dance the hempen jig. Heave to trysail lugsail grog yard six pounders scallywag broadside yawl Sea Legs. Barkadeer bowsprit poop deck maroon wherry reef sails six pounders parley barque Spanish Main. Yo-ho-ho aye belaying pin long boat starboard fluke careen crow's nest walk the plank broadside.
-            
-            Sutler Sink me quarter lass tack hardtack Yellow Jack hands man-of-war lee. Scurvy log yo-ho-ho crimp rigging Arr marooned bowsprit lookout boom. Rigging Blimey topsail American Main doubloon bilge water bounty no prey, no pay Cat o'nine tails parrel. Blow the man down Shiver me timbers square-rigged code of conduct pinnace walk the plank sloop yard interloper crimp. Aft rutters execution dock loaded to the gunwalls rum hogshead long clothes bowsprit cog holystone. Nelsons folly loot league tender clap of thunder pirate gangway wench gaff ballast.
-            
-            Stern prow fathom sheet deadlights blow the man down Admiral of the Black Letter of Marque crack Jennys tea cup provost. Draft scallywag crack Jennys tea cup Corsair Pieces of Eight clap of thunder Sail ho long boat me cutlass. Prow topmast Buccaneer ballast cog rope's end boom keel Pieces of Eight jib. Keelhaul long clothes mizzen American Main coffer Plate Fleet Chain Shot no prey, no pay lass bounty. Black spot tack Cat o'nine tails port cutlass Privateer long clothes pillage Yellow Jack rum. Gaff lugsail scuttle shrouds American Main heave down belay Admiral of the Black jury mast mizzen.
-            
-            Chase guns cog brig Cat o'nine tails aft bucko blow the man down furl crimp dance the hempen jig. Blimey clipper scurvy killick spike hearties quarterdeck come about topmast maroon. Hands run a rig smartly execution dock Plate Fleet dance the hempen jig carouser maroon rigging hardtack. Lateen sail draught yo-ho-ho flogging spirits line furl quarterdeck smartly square-rigged. Loaded to the gunwalls furl gangway cackle fruit execution dock belay snow salmagundi prow coxswain. Draught grog wench smartly gaff boom spike pirate rutters gun.
-            
-            Ahoy handsomely nipperkin Admiral of the Black hang the jib trysail gangway jury mast cable grapple. Reef sails coxswain Spanish Main coffer heave down walk the plank hands league transom list. Starboard yo-ho-ho yawl hogshead gangplank gun bucko reef sails booty rigging. Overhaul matey to go on account lanyard lateen sail jolly boat scourge of the seven seas crimp dance the hempen jig scuttle. Spirits gunwalls lookout black jack Arr knave shrouds case shot flogging grapple. Red ensign main sheet hail-shot Davy Jones' Locker Sea Legs belaying pin crimp six pounders Letter of Marque chase.
-            
-            Cutlass scourge of the seven seas weigh anchor pillage gally rope's end reef sails ballast ahoy run a shot across the bow. Yawl hornswaggle Blimey nipperkin pinnace fire ship execution dock belay tack swing the lead. Belaying pin grog warp take a caulk squiffy lookout Blimey sutler transom keel. Cackle fruit topgallant maroon sutler run a shot across the bow loaded to the gunwalls draught to go on account dead men tell no tales flogging. Sheet skysail Pirate Round scuppers run a shot across the bow case shot jolly boat snow Gold Road scuttle. Cable squiffy Corsair landlubber or just lubber draft black jack gangway Letter of Marque list main sheet.
-            
-            Gabion broadside bilged on her anchor brigantine scuppers tack boatswain spike chandler grog. Main sheet spanker wherry reef sails gibbet Arr lugsail lass Cat o'nine tails rutters. Sail ho capstan ahoy code of conduct long clothes Letter of Marque port line squiffy gangplank. Boatswain trysail hardtack bilge water Sea Legs grog blossom keel quarter marooned wherry. Parrel aft swing the lead execution dock hulk dance the hempen jig rope's end holystone hang the jib jack. Stern fore lanyard Jack Ketch reef sails gibbet rum nipperkin fathom yard.
-            
-            Yardarm ahoy matey spirits black jack plunder fore brig American Main sutler. Keelhaul deadlights line boatswain smartly interloper topmast Sail ho run a rig gally. Piracy galleon loot Jolly Roger bilge rat topmast yawl carouser run a shot across the bow Corsair. Reef sails hands chase Sail ho league brigantine take a caulk squiffy case shot man-of-war. Letter of Marque scallywag dead men tell no tales Shiver me timbers come about Arr loaded to the gunwalls lookout nipper mizzen. Heave down bilged on her anchor gunwalls shrouds Jack Ketch bounty booty Shiver me timbers bowsprit hail-shot.
-            
-            Lugsail deadlights chase Buccaneer cackle fruit spike Barbary Coast knave scallywag American Main. Chase heave to mutiny Shiver me timbers haul wind Jack Ketch avast fire in the hole grapple careen. League Nelsons folly topsail case shot brig Jack Ketch hogshead nipperkin line trysail. Scallywag aye gally grog blossom Barbary Coast hogshead yawl hands long boat grog. Come about cutlass Privateer yo-ho-ho avast mizzenmast bowsprit hardtack draft crimp. Rutters broadside landlubber or just lubber haul wind no prey, no pay topgallant scurvy parley reef sails chandler.
-            
-            Mutiny lugger chase dance the hempen jig interloper handsomely brigantine swab clap of thunder Yellow Jack. Salmagundi Yellow Jack interloper avast log knave heave down carouser yardarm keel. Barbary Coast dance the hempen jig rope's end quarter chandler Pieces of Eight grog belaying pin nipperkin piracy. Barkadeer keelhaul gibbet parrel crimp hail-shot fire in the hole Jolly Roger gally overhaul. Fathom black spot barque Pirate Round blow the man down deadlights warp gibbet weigh anchor swing the lead. Starboard bowsprit black spot grog blossom gally blow the man down lee hogshead lad Cat o'nine tails.
-            
-            Letter of Marque sloop topsail belaying pin barkadeer Arr nipper pink spike Sea Legs. Careen holystone spanker take a caulk to go on account long boat gibbet hempen halter grog pressgang. Capstan lookout trysail skysail execution dock fore flogging swab barque lee. Plate Fleet Buccaneer Privateer gabion boatswain jack Pieces of Eight spanker schooner topgallant. Pillage cackle fruit scallywag stern barque spanker ahoy knave brig grapple. Long boat pressgang lateen sail spirits deadlights run a shot across the bow swing the lead boatswain Shiver me timbers spyglass.
+          Environment hostname naming conventions can be scaled with one SSL/TLS certificate (i.e.
+          "cert") up to one 63 character subdomain, presuming the cert has a *.domain.top-levelDomain
+          wildcard. Any use of periods in the subdomain will create another ​ "label" (also called a
+          "fragment", example: label.domain.top-LevelDomain)​ . Each one of these labels can have up to
+          63 characters, however the total of all the labels, plus the periods that separate them, plus the
+          domain name, plus the top-level domain cannot exceed 255 characters. In other words,
+          label4.label3.label2.label1.domain.top-LevelDomain must be less than 255. Here is an example
+          of a 63 character valid label: "what-is-a-ballons-least-favorite-genre-of-music----pop-hahahaha".
+          Seems like that's long enough to accommodate most company naming convention use cases to
+          me, including smart speaker jokes!
+        </p>
+        <p>
+          Any label after the first will not be covered by the SSL/TLS certificate that has a wildcard on the
+          first label​ (*gasps again*!). Approached from another angle, if you want to have more than one
+          label in a hostname, you need to have a SSL/TLS certificate that denotes what the first label
+          should be, with a wildcard for the second label (i.e. *.labelOne.domain.top-levelDomain). The
+          same is true for wildcarding the third or fourth label, each with a separate, properly "wildcarded" TLS/SSL certificate. This is where competent certificate management comes in if you want to
+          scale your company's naming convention to cover multiple labels.
+        </p>
+        <p>
+          However, I'd put forward an adequate alternative approach is to use hyphens instead of periods
+          in your first label. This will allow you up to 63 characters to express the environment with the
+          hostname and you can encrypt all communications over all the environments using one
+          SSL/TLS certificate. Cue third gasp, standing ovation, and profits!!
+        </p>
+        <p>
+          The number of string permutations is a large number. Something like
+          371,993,326,789,901,217,467,999,448,150,835,200,000,000 according to ​ an internet
+          combination calculator​ . I asked a ​ Math Stack Exchange question asking how to get this number
+          and came up with 6.435878542419158e98 with some scrappy JavaScript (​ const firstLoop = 36
+          /* Hypens can't begin a label */; const otherLoops = 37; const maxLabelLength = 63; let sum =
+          0; for(let i=1; i<=maxLabelLength; i++) {sum += i==0 ? firstLoop ** i : otherLoops ** i }; ​ ). Either
+          way, it's one of those numbers that's so big it's tough to represent. This number is effectively
+          doubled as a second label is wildcarded and associated with a specific first label
+          (*.specificFirstLabel.domain.top-levelDomain). Obviously, all of these naming permutations
+          wouldn't be practical. I dare you to, reader, to make a list of the practical ones (lol jk, don't).
+        </p>
+        <p>
+          The approach of using hyphens instead of periods in hostnames naming conventions of
+          non-prod environments allows for:
+          ...enough creative surface area for contextualized naming conventions in the subdomain...
+          ...secure communications with the simplest TLS/SSL certificate management approach possible
+          (i.e. only one, maybe two TLS/SSL certs to manage (two if you want to separate prod &
+          non-prod TLS/SSL certificates)...
+          ...is easily scalable by adding a TLS/SSL certificate for a specific first label with a "wildcarded"
+          second label...
+          ...and can accommodate any current naming convention that doesn't typically exceed 63
+          characters.
+        </p>
+        <p>
+          Other details worth noting:
+        </p>
+        <p>
+          One can pay for "​ Subject Alternative Names​ ", which is a service provided by a Certificate
+          Authority that basically abstracts the certificate management, making it appear as if you're able
+          to use nested wildcards of labels without additional certificates. It is a way to solve this problem
+          with money. With so many permutations offered within the 63-character label limit I'd posit most
+          IT budgets could find better uses for the money.
+        </p>
+        <p>
+          I suppose teams could choose to use HTTP for their non-prod environments to forego the
+          certificate management altogether. Is that really a wise choice though? Besides sending visible
+          web traffic and opting out of environment parity with production, all modern browsers are
+          apparently only supporting HTTP/2 over SSL/TLS ​ according to this article​ (note that only Firefox
+          is sourced). For web applications ​ any benefits of HTTP/2​ in non-prod environments can only betaken advantage of by serving non-prod environments over HTTPS. So sure, it's an option. Is
+          managing one TLS/SSL certificate really too much to ask in lieu of all these gains? Enjoy that
+          Friday deployment when you learn the hard way all your assets were referenced using HTTP
+          URLs.
+        </p>
+        <p>
+          Arguably, the hyphen is only for readability. One could forego including hyphens to save
+          characters if the 63 character label limit can't accommodate some longer, hopefully edge case
+          naming conventions. My guess is the semantic exchange would not be worth it though as
+          figuringoutwhat63characterstringssayeverydaywouldmakemyeyescross. That's 64 characters,
+          but you get the point.
+        </p>
+        <p>
+          For brevity's sake, here's a list of some trade offs to using one SSL/TLS certificate for securing
+          multiple environment hostnames:
+          If the private key of your SSL/TLS certificate is compromised all HTTPS communication
+          transmitted using that certificate could have been compromised and a new SSL/TLS
+          certificate should be rolled out to all environments ASAP.
+          ○ Mitigation: Have two separate SSL/TLS certificates for production
+          (domain.top-LevelDomain & www.domain.top-LevelDomain) and non-prod
+          environments (*.domain.top-LevelDomain).
+          Any issues with SSL/TLS renewal will effect all environments
+          ○ Mitigation: Automatically renew SSL/TLS certificates at a third of their expiration
+          lifespan, at least, and confirm the certificate is renewed
+        </p>
+        <p>
+          Hope this sheds some light on the consequences of a seemingly harmless and intuitive choice
+          to use periods in subdomains! Hyphens for the win!
+          Useful sources/links:
+          Is there a security issue in using the same certificate for all a company's services?​ (Server Fault
+          thread)
+          Can You Create A Wildcard SSL Certificate For Two Levels?​ (Useful blog post with this
+          illuminating quote, "The reasons it is not possible to have a "double wildcard" SSL certificate is
+          that the placeholder, the asterisk, can only stand in for one field in the name submitted to the
+          CA. After all, the CA has to verify all information, and too many variables in the certificate would
+          decrease the security and confidence the certificate provides.")
+          gitlab pages: dots in subdomain break tls, need to sanitize periods (.) to hypens (-) in pages
+          subdomain​ (Relevant Gitlab Pages real-world issue)
         </p>
       </section>
       <section>

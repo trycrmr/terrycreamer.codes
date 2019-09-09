@@ -4,6 +4,17 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+.tldr {
+  color: grey;
+  font-style: italic;
+  background: whitesmoke;
+  font-size: 1em;
+  text-align: left;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-weight: 400;
+}
+
 dl {
   font-size: 1.4em;
   color: black;
@@ -30,7 +41,7 @@ dl > dd {
   display: none;
 }
 
-article > section > p {
+article.post section p {
   font-size: 1.2rem;
   color: #28282c;
   text-align: left;
