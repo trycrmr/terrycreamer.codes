@@ -3,7 +3,7 @@ A personal website and blog. Feel free to open issues to discuss changes.
 Hopes and dreams:
 
 xprotect the master branch
-add the real content
+xadd the real content
 get the audits to 100
 
 set up a pipeline to pull from github and deploy it to a bucket

@@ -164,20 +164,14 @@ for(let i=1; i<=maxLabelLength; i++) { <br />
         <p>
           For brevity's sake, here's a list of some trade offs to using one SSL/TLS certificate for securing
           multiple environment hostnames:
-          <ul>
+          <ol>
             <li>If the private key of your SSL/TLS certificate is compromised all HTTPS communication
-                transmitted using that certificate could have been compromised and a new SSL/TLS certificate should be rolled out to all environments ASAP.</li>
-                <ul>
-                    <li>Mitigation: Have two separate SSL/TLS certificates for production
-                        (<span class="italics">domain.top-LevelDomain</span> & <span class="italics">www.domain.top-LevelDomain</span>) and non-prod
-                        environments (<span class="italics">*.domain.top-LevelDomain</span>). Secure them adequately, but separately.</li>
-                </ul>
-            <li>Any issues with SSL/TLS renewal will effect all environments</li>
-            <ul>
-                <li>Mitigation: Automatically renew SSL/TLS certificates at a third of their expiration
-                    lifespan, at least, and confirm the certificate is actually renewed at a similar frequency.</li>
-            </ul>
-          </ul>
+                transmitted using that certificate could have been compromised and a new SSL/TLS certificate should be rolled out to all environments ASAP. A mitigation is to have two separate SSL/TLS certificates for production
+                      (<span class="italics">domain.top-LevelDomain</span> & <span class="italics">www.domain.top-LevelDomain</span>) and non-prod
+                      environments (<span class="italics">*.domain.top-LevelDomain</span>). Secure them adequately, but separately.</li>
+            <li>Any issues with SSL/TLS renewal will effect all environments. A mitigation is to automatically renew SSL/TLS certificates at a third of their expiration
+                      lifespan, at least, and confirm the certificate is actually renewed at a similar frequency.</li>
+          </ol>
         </p>
         <p>
           Hope this sheds some light on the consequences of a seemingly harmless and intuitive choice

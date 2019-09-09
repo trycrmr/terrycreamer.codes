@@ -5,7 +5,7 @@ a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
 blockquote.decorativeQuote {
-  color: grey;
+  color: dimgray;
   width: fit-content;
   font-style: italic;
   padding: 0.5em;
@@ -23,7 +23,6 @@ blockquote.decorativeQuote > footer {
   font-size: 0.8em;
 }
 
-
 span.breakWords {
   word-break: break-all;
 }
@@ -36,7 +35,7 @@ article.post blockquote.breakWords {
   word-break: break-all;
 }
 
-article.post ul li {
+article.post ol, ul, li {
   text-align: left;
   font-size: 1.2rem;
   color: #28282c;
@@ -63,7 +62,7 @@ span.italics {
 }
 
 .tldr {
-  color: grey;
+  color: dimgray;
   font-style: italic;
   background: whitesmoke;
   font-size: 1em;
