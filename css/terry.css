@@ -4,6 +4,44 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+span.breakWords {
+  word-break: break-all;
+}
+
+article.post section p.noTextIndent {
+  text-indent: 0%;
+}
+
+article.post blockquote.breakWords {
+  word-break: break-all;
+}
+
+article.post ul li {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #28282c;
+}
+
+pre.code {
+  text-align: left;
+  white-space: normal;
+  max-width: inherit;
+}
+
+code {
+  /* white-space: normal; */
+  /* display: inline-block; */
+  /* max-width: inherit; */
+}
+
+p > a {
+  text-decoration: underline;
+}
+
+span.italics {
+  font-style: italic;
+}
+
 .tldr {
   color: grey;
   font-style: italic;
@@ -54,15 +92,17 @@ article.post section p {
   font-size: 0.8em;
 }
 
-
 .meta {
-  padding: 0% 10% 0% 10%
+  padding: 0% 10% 0% 10%;
+  margin: auto;
+  max-width: 800px;
 }
 
 .post {
   text-align: center;
   margin: auto;
   padding: 0% 10% 0% 10%;
+  max-width: 800px;
 }
 
 .list {
