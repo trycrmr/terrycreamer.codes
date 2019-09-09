@@ -4,6 +4,26 @@ a:hover { text-decoration: none; color:orange }
 a:focus { text-decoration: none; color:orange }
 a:active { text-decoration: none; color:orange }
 
+blockquote.decorativeQuote {
+  color: grey;
+  width: fit-content;
+  font-style: italic;
+  padding: 0.5em;
+  margin: auto;
+  background: whitesmoke;
+  border-radius: 0.5em;
+  font-weight: 600;
+  font-size: 1.0em
+
+}
+
+blockquote.decorativeQuote > footer {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8em;
+}
+
+
 span.breakWords {
   word-break: break-all;
 }
