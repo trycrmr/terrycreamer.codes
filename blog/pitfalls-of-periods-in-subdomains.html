@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Pitfalls of Periods in Subdomains</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="manifest" href="../site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
@@ -21,28 +21,28 @@
 
 <body>
   <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/" aria-label="Your browser is outdated; Please upgrade your browser.">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
   <!-- Add your site or application content here -->
   <div class="wholePage">
     <nav>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/" aria-label="Home link">Home</a></li>
+        <li><a href="/blog" aria-label="Blog link">Blog</a></li>
       </ul>
     </nav>
     <aside class="meta">
       <p>
         Date Published: September 3rd, 2019<br />
-        Version History: <a href="https://github.com/trycrmr/terrycreamer.codes" target="_blank">Git Log </a>(Suggest an <a href="https://github.com/trycrmr/terrycreamer.codes/issues" target="_blank">edit</a>)<br />
-        Discussion: <a href="#" target="_blank">Twitter</a> and <a href="#" target="_blank">Hacker News</a>
+        Version History: <a href="https://github.com/trycrmr/terrycreamer.codes" target="_blank" rel="noopener" rel="noreferrer" aria-label="Link to Github repository associated with this site">Git Log </a>(Suggest an <a href="https://github.com/trycrmr/terrycreamer.codes/issues" target="_blank" rel="noopener" rel="noreferrer" aria-label="Link to Github issues associated with this site">edit</a>)<br />
+        Discussion: <a href="#" target="_blank" rel="noopener" rel="noreferrer" aria-label="Link to a Twitter search with tweets referencing this blog post">Twitter</a> and <a href="#" target="_blank" rel="noopener" rel="noreferrer" aria-label="Link to the Hacker News comments for this blog post">Hacker News</a>
       </p>
     </aside>
     <article class="post">
-      <h1 class="title">Test Title</h1>
+      <h1 class="title">Pitfalls of Periods in Subdomains</h1>
       <section>
-        <h2 class="subtitle">So, this is what happened</h2>
+        <h2 class="subtitle">While seemingly practical, using periods in subdomains for environment hostnames actually </h2>
         <p>
             American Main Barbary Coast hempen halter cackle fruit dance the hempen jig tender Sea Legs quarter chandler transom. Rutters chandler bilged on her anchor capstan execution dock Yellow Jack furl cable barkadeer dance the hempen jig. Admiral of the Black ballast bilged on her anchor quarter Jolly Roger splice the main brace Spanish Main marooned spyglass provost. Gangway yard crow's nest handsomely Plate Fleet overhaul mizzenmast rigging man-of-war flogging. Smartly shrouds no prey, no pay Spanish Main fire in the hole boatswain bowsprit knave bucko scallywag. Scuppers splice the main brace black jack Plate Fleet killick gabion rigging ballast capstan draught.
         </p>
@@ -81,21 +81,23 @@
       </section>
     </article>
     <aside class='meta'>
-      <p>Author: <a href="/" target="_blank">Terry Creamer </a></p>
+      <p>Author: <a href="/" target="_blank" rel="noopener" rel="noreferrer" aria-label="Link to Terry Creamer's Website and Blog">Terry Creamer </a></p>
     </aside>
     <nav class="navSpace"> <!-- Creates a second nav for consistent spacing with mobile nav and content on mobile. Hacky approach; It gets the job done for now. -->
       <ul>
-        <li><a href="/"></a></li>
-        <li><a href="/blog"></a></li>
+        <li><a href="/" aria-label="Home link"></a></li>
+        <li><a href="/blog" aria-label="Blog link"></a></li>
       </ul>
     </nav>
   </div>
 
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="../js/vendor/modernizr-3.7.1.min.js"></script>
+  <!--   
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js"></script> 
+  -->
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 <script>
 
