@@ -68,3 +68,9 @@
   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
+
+@media all and (max-width:800px) {
+  [data-tooltip] {
+    z-index: 0;
+  }
+}
