@@ -226,6 +226,10 @@ img {
     background-color:rgba(300,300,300,1);
     display: table;
   }
+  nav.left {
+    float: unset;
+    display: table;
+  }
   nav > ul > li {
     float: right;
   }
